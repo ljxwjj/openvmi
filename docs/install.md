@@ -14,7 +14,7 @@ $ sudo apt install -y build-essential cmake cmake-data debhelper dbus google-moc
 - 下载源码
 ```bash
     $ cd ~
-    $ git clone https://github.com/DockDroid/openvmi.git
+    $ git clone https://github.com/ljxwjj/openvmi.git
 ```
 - 编译与安装内核模块
 ```bash
@@ -44,7 +44,7 @@ $ sudo apt install -y build-essential cmake cmake-data debhelper dbus google-moc
 ### 1. 下载源码
 ```bash
     $ cd ~
-    $ git clone https://github.com/DockDroid/cloud-platform.git
+    $ git clone https://github.com/ljxwjj/cloud-platform.git
 ```
 
 ### 2. Docker运行环境安装
