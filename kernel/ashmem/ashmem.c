@@ -330,7 +330,7 @@ static ssize_t ashmem_read_iter(struct kiocb *iocb, struct iov_iter *iter)
      * kernel_read supersedes vfs_read from kernel version 3.9
      */
     mutex_unlock(&ashmem_mutex);
-    ret = vfs_iter_read(asma->file, iter, &iocb->ki_pos, 0);
+    ret = vfs_iter_read(asma->file, iter, &iocb->ki_pos);
     mutex_lock(&ashmem_mutex);
     if (ret > 0)
         /** Update backing file pos, since f_ops->read() doesn't */
@@ -395,8 +395,8 @@ static int ashmem_mmap(struct file *file, struct vm_area_struct *vma)
         goto out;
     }
 
-    if ((vma->vm_flags & ~calc_vm_prot_bits(asma->prot_mask, 0)) &
-        calc_vm_prot_bits(PROT_MASK, 0)) {
+    if ((vma->vm_flags & ~calc_vm_prot_bits(asma->prot_mask)) &
+        calc_vm_prot_bits(PROT_MASK)) {
         ret = -EPERM;
         goto out;
     }
