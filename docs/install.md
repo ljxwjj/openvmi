@@ -190,6 +190,11 @@ $ sudo apt install -y build-essential cmake cmake-data debhelper dbus google-moc
     $ docker rmi docker.io/mirrorgooglecontainers/kube-proxy-arm64:v1.14.2 
     $ docker rmi docker.io/mirrorgooglecontainers/pause-arm64:3.1 
 ```
+- 修改hostname
+```bash
+    $ echo 你要改的名字 > /etc/hostname
+    $ reboot 
+```
 - 使用sudo执行Master节点安装流程最后一步中生成的加入到集群的命令
 
 ### 4. K8S设备插件服务安装

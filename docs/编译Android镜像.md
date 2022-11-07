@@ -103,6 +103,11 @@ $ cd ./mount_dir
 $ sudo tar --numeric-owner -cf- . | docker import - android:openvmi
 ```
 4. 查看系统容器，确认android:openvmi镜像存在：
+5. android镜像的导入导出
+```bash
+$ docker save f8c7b48e1a8a > android_7-xposed.tar
+$ docker load < android_7-xposed.tar
+```
 
 ```bash
 $ docker images
